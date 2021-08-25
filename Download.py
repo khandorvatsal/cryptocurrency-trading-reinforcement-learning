@@ -9,11 +9,11 @@ TIMEFRAME = '1h'#,'4h','1h','15m','1m'
 TIMEFRAME_S = 3600 # seconds in TIMEFRAME
 
 # Define the start date
-t_start = datetime.datetime(2018, 7, 1, 0, 0)
+t_start = datetime.datetime(2018, 1 ,1, 0, 0)
 t_start = time.mktime(t_start.timetuple()) * 1000
 
 # Define the end date
-t_stop = datetime.datetime(2021, 7, 1, 0, 0)
+t_stop = datetime.datetime(2021, 8, 25, 0, 0)
 t_stop = time.mktime(t_stop.timetuple()) * 1000
 
 def fetch_data(start, stop, symbol, interval, TIMEFRAME_S):
