@@ -492,10 +492,10 @@ if __name__ == "__main__":
     test_df = df[-test_window-lookback_window_size:]
 
     # single processing training
-    agent = CustomAgent(lookback_window_size=lookback_window_size,lr=0.00001, epochs=5, optimizer=Adam, batch_size=32, model="LSTM")
+    agent = CustomAgent(lookback_window_size=lookback_window_size,lr=0.00001, epochs=5, optimizer=Adam, batch_size=32, model="CNN")
     train_env = CustomEnv(train_df, lookback_window_size=lookback_window_size)
     train_agent(train_env, agent, visualize=False,
-                train_episodes=100000, training_batch_size=500)
+                train_episodes=50000, training_batch_size=500)
 
 
 
