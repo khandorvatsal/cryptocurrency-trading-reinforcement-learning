@@ -492,19 +492,19 @@ if __name__ == "__main__":
     test_df = df[-test_window-lookback_window_size:]
 
     # single processing training
-    agent = CustomAgent(lookback_window_size=lookback_window_size,lr=0.00001, epochs=5, optimizer=Adam, batch_size=32, model="CNN")
-    train_env = CustomEnv(train_df, lookback_window_size=lookback_window_size)
-    train_agent(train_env, agent, visualize=False,
-                train_episodes=50000, training_batch_size=500)
+    #agent = CustomAgent(lookback_window_size=lookback_window_size,lr=0.00001, epochs=5, optimizer=Adam, batch_size=32, model="CNN")
+    #train_env = CustomEnv(train_df, lookback_window_size=lookback_window_size)
+    #train_agent(train_env, agent, visualize=False,
+    #           train_episodes=50000, training_batch_size=500)
 
 
 
     # multiprocessing training/testing. Note - run from cmd or terminal
-    #agent = CustomAgent(lookback_window_size=lookback_window_size,
-    #                    lr=0.00001, epochs=5, optimizer=Adam, batch_size=32, model="CNN")
-    #test_env = CustomEnv(test_df, lookback_window_size=lookback_window_size)
-    #test_agent(test_env, agent, visualize=True,
-    #           test_episodes=1000, folder="2021_07_24_09_40_Crypto_trader", name="1453.27_Crypto_trader", comment="CNN")
+    agent = CustomAgent(lookback_window_size=lookback_window_size,
+                        lr=0.00001, epochs=5, optimizer=Adam, batch_size=32, model="Dense")
+    test_env = CustomEnv(test_df, lookback_window_size=lookback_window_size)
+    test_agent(test_env, agent, visualize=False,
+               test_episodes=1000, folder="2021_08_29_21_49_Crypto_trader", name="1074.99_Crypto_trader", comment="Dense")
 
 
     #train_multiprocessing(CustomEnv, agent, train_df, num_worker = 32, training_batch_size=500, visualize=False, EPISODES=200000)
